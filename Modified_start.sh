@@ -1,7 +1,13 @@
 #!/bin/bash
 
-sudo apt-get update
-sudo apt install ffmpeg
+environment=$(uname -s)
+
+if [[ $environment -eq "Darwin" ]]; then
+   brew install ffmpeg
+else
+   sudo apt-get update
+   sudo apt install ffmpeg
+fi
 
 python3.11 -m venv venv
 source venv/bin/activate
