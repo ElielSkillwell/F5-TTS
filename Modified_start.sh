@@ -2,7 +2,7 @@
 
 environment=$(uname -s)
 
-if [[ $environment -eq "Darwin" ]]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
    brew install ffmpeg
 else
    sudo apt-get update
